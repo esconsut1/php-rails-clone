@@ -1,0 +1,19 @@
+<h1>Login</h1>
+<p>Not yet a member? <A href="/user/signup">Free Signup</a></p>
+<? if ($_SESSION['return_url']) { ?>
+    <p><b style="color: #CC0000;">In the middle of doing something else?</b> Don't worry, we'll return you right there when you login.</p>
+<? } ?>
+
+<form method="POST" action="/user/login">
+<p><b>Username:</b><br/>
+    <input type="text" name="name" size="40" />
+<p>
+<p><b>Password:</b><br/>
+    <input type="password" name="password" size="30" />
+</p>
+<p>
+    <input type="checkbox" name="remember" value="1" CHECKED /> Remember me on this computer.
+</p>
+<input type="submit" value="Login" />
+<input type="hidden" name="utform" value="<?= $this->utform ?>" />
+</form>

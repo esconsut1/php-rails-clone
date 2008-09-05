@@ -1,0 +1,30 @@
+# Allow short open tags
+# I know, I know, it just makes things easier
+AddHandler php5-script .php
+
+php_flag short_open_tag on
+
+# UFT 8 Things
+php_value mbstring.language "Neutral"
+php_flag mbstring.encoding_translation on
+php_value mbstring.func_overload "7"
+php_value mbstring.http_input "UTF-8"
+php_flag magic_quotes_gpc Off
+
+# Hide index.php
+RewriteEngine on
+#RewriteBase /
+
+#RewriteCond %{DOCUMENT_ROOT}/cache%{REQUEST_URI}.shtml -f
+#RewriteRule ^(.+) /cache/$1.shtml [QSA,L]
+
+#RewriteRule ^/$ cache/index.shtml [QSA]
+#RewriteRule ^$ cache/index.shtml [QSA]
+
+
+# Run through the controller if not static
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+) index.php\/$1 [L] 
+
+

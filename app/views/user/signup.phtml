@@ -1,0 +1,22 @@
+<h1>Become a Sublime Member</h1>
+<p>Registrations are free, and when you do, you can rate things, leave comments, make friends and all that good stuff.
+Leaving your email address is optional, we hate spamming too, but if you ever forget your password, we can mail it to you!</p>
+<p>Already a member? <a href="/user/login">Then just Login</a></p>
+
+<? if ($_SESSION['return_url']) { ?>
+    <p><b style="color: #CC0000;">In the middle of doing something else?</b> Don't worry, we'll return you right there after you've finished registering and logging in.</p>
+<? } ?>
+
+<form method="POST" action="/user/signup">
+<p><b>Username:</b> <small>Pick a name for yourself. Short and sweet.</small><br/>
+<input type="text" name="name" size="40" maxlength="30" value="<?= htmlspecialchars($this->params['name']) ?>" />
+<p>
+<p><b>Password:</b><br/>
+<input type="text" name="password" size="30" maxlength="30" value="<?= htmlspecialchars($this->params['password']) ?>" />
+<p>
+<p>Email: <small>Optional</small><br/>
+<input type="text" name="email" size="40" maxlength="30" value="<?= htmlspecialchars($this->params['email']) ?>" />
+<p>
+<input type="submit" value="Signup!" />
+<input type="hidden" name="utform" value="<?= $this->utform ?>" />
+</form>
