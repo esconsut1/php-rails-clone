@@ -43,6 +43,7 @@ if (APPLICATION_PATH === false) {
 } else {
 	$sys_path = APPLICATION_PATH;
 }
+$sys_path = str_replace('/config', '', $sys_path);
 
 // Setup paths
 define('DS', DIRECTORY_SEPARATOR);
