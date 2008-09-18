@@ -9,7 +9,7 @@ include_once('errors.php');
 include_once('../config/config.php');
 
 // Startup some things
-session_save_path(ROOT . DS . 'tmp' . DS . 'sessions');
+session_save_path('../tmp' . DS . 'sessions');
 session_name(SESSION_USER);
 session_start();
 
