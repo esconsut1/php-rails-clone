@@ -6,7 +6,7 @@ include_once('errors.php');
 */
 
 // Loadup the config file
-include_once('../config.php');
+include_once('../config/config.php');
 
 // Startup some things
 session_save_path(ROOT . DS . 'tmp' . DS . 'sessions');
